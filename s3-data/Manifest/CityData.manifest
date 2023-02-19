@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "url": "s3://bamboo-city-data-bucket/CityData.csv", 
+      "mandatory": true 
+    },
+    {
+      "url": "s3://bamboo-city-data-bucket/CityData1.csv",
+      "mandatory": true
+    }
+  ]
+}
