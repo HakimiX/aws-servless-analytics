@@ -3,17 +3,20 @@
 **Technologies**<br>
 AWS Athena, Glue, Quicksight, and Redshift Spectrum
 
-## Table of Contents
+# Table of Contents
 - [AWS Serverlesss Analytics Architecture](#aws-serverlesss-analytics-architecture)
-  - [Table of Contents](#table-of-contents)
-    - [Ecosystem Overview](#ecosystem-overview)
-    - [Architectural Overview](#architectural-overview)
-    - [Data](#data)
-    - [Technologies](#technologies)
-      - [AWS Glue](#aws-glue)
-    - [Setup](#setup)
+- [Table of Contents](#table-of-contents)
+  - [Ecosystem Overview](#ecosystem-overview)
+  - [Architectural Overview](#architectural-overview)
+  - [Data](#data)
+  - [Technologies](#technologies)
+    - [AWS Glue](#aws-glue)
+  - [Practical Guide](#practical-guide)
+    - [1. Create S3 Bucket](#1-create-s3-bucket)
+    - [2. Create Redshift Cluster](#2-create-redshift-cluster)
+    - [Sources](#sources)
 
-### Ecosystem Overview
+## Ecosystem Overview
 **How does data go from source to reporting?**<br>
 1. Data from web logs, clickstream, sensors, etc. is uploaded to S3 (data lake). 
 2. Build a data catalog from the S3 data (i.e. transforming data, ETL).
@@ -22,16 +25,16 @@ AWS Athena, Glue, Quicksight, and Redshift Spectrum
   
 ![](resources/ecosystem-overview.png)
 
-### Architectural Overview
+## Architectural Overview
 Interoperating a data lake and a data warehouse. 
 ![](resources/architecture-overview.png)
 
-### Data
+## Data
 Date comes from multiple sources and formats: 
 ![](resources/data-sources.png)
 
-### Technologies
-#### AWS Glue
+## Technologies
+### AWS Glue
 * Automatically discover and categorize the data making it immediately searchable and queryable across data sources. 
 * Generate code to clean, enrich, and reliably move data between various data sources. 
 * Run jobs on a serverless, fully managed environment.
@@ -39,6 +42,10 @@ Date comes from multiple sources and formats:
   * Data Catalog: central data repository integrated with aws services.
   * Job authoring: auto-generate ETL code, edit, and debug. 
   * Deploy: serverless execution, scheduling, monitoring, and alerting. 
+
+What is AWS Glue used for? 
+* You can use AWS Glue to understand the data assets. You can store the data using various AWS services and still maintain a unified view of the data using AWS Glue Data Catalog. 
+* View the Data Catalog to quickly search and discover data accross various data sources. 
 
 Move data across storage systems:
 ![](resources/aws-glue-overview.png)
@@ -48,9 +55,16 @@ Move data across storage systems:
 
 :warning: Each AWS account has one AWS Data Catalog.
 
-### Setup
 
-1. Create bucket and upload `/s3-data`
-2. Create Redshift cluster. 
-3. Setup Glue (ETL and Data catalog)
-   
+## Practical Guide
+
+### 1. Create S3 Bucket
+TODO....
+
+### 2. Create Redshift Cluster
+[Create Redshift Cluster](./docs/create-redshift-cluster.md)   
+
+### Sources
+
+* [What is AWS Glue?](https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html)
+* [Data Catalog and crawlers in AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html)
