@@ -8,6 +8,10 @@
     - [3. AWS Glue Data Catalog](#3-aws-glue-data-catalog)
     - [4. AWS Glue database](#4-aws-glue-database)
     - [5. AWS Glue Tables](#5-aws-glue-tables)
+    - [6. AWS Glue Crawlers](#6-aws-glue-crawlers)
+      - [Catalogin tables with crawlers](#catalogin-tables-with-crawlers)
+      - [Crawler Execution Workflow](#crawler-execution-workflow)
+    - [7. AWS Glue Classifier](#7-aws-glue-classifier)
 
 
 ### 1. Create IAM Role
@@ -89,3 +93,32 @@ Optionally add additional columns to the table (mapped to the csv data)
 **Previewing Data**
 You are redirected to AWS Athena if you want to view the data (action -> view data)
 ![](../resources/glue/glue-view-data.png)
+
+### 6. AWS Glue Crawlers
+
+Crawlers automatically build the Data Catalog and keeps it in sync. Automatically discovers new data and detects schema changes. 
+
+Crawlers have built-in classifiers and can run ad-hoc or on a schedule (serverless so you only pay when crawler runs). 
+
+![](../resources/glue/glue-crawlers.png)
+
+
+#### Catalogin tables with crawlers
+You can use a crawler to populate the AWS Glue Data Catalog with tables. The is the primary method used by most Glue users. 
+
+**You add a crawler within your Data Catalog to traverse your data stores**.
+
+The output of the crawler consists of one or more metadata tables that are defined in the Data Catalog. ETL Jobs defined in Glue use these metadata tables as sources and targets. 
+
+The Crawler uses an IAM role for permissions to access the data stores in the Data Catalog. The IAM role must have permission to access the data sources 
+
+When defining a crawler, one or more classifiers are chosen to evaluate the format of the data to infer a schema. 
+
+#### Crawler Execution Workflow 
+
+Crawler runs any custom classifier to infer the schema of the data. (you provide the code for custom classifiers). 
+
+The first custom classifier to successfully recognize the structure of the data is used to create a schema. If no classifier matches the data schema, built-in classifiers try to recognize the data schema. 
+
+### 7. AWS Glue Classifier
+
