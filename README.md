@@ -12,8 +12,6 @@ AWS Athena, Glue, Quicksight, and Redshift Spectrum
   - [Technologies](#technologies)
     - [AWS Glue](#aws-glue)
   - [Practical Guide](#practical-guide)
-    - [1. Create S3 Bucket](#1-create-s3-bucket)
-    - [2. Create Redshift Cluster](#2-create-redshift-cluster)
     - [Sources](#sources)
 
 ## Ecosystem Overview
@@ -58,11 +56,10 @@ Move data across storage systems:
 
 ## Practical Guide
 
-### 1. Create S3 Bucket
-TODO....
+1. Create S3 Bucket (TODO)
+2. [Create Redshift Cluster](./docs/create-redshift-cluster.md)   
+3. Create glue
 
-### 2. Create Redshift Cluster
-[Create Redshift Cluster](./docs/create-redshift-cluster.md)   
 
 ### Sources
 
