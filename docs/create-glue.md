@@ -13,6 +13,7 @@
       - [Crawler Execution Workflow](#crawler-execution-workflow)
       - [Create Crawler](#create-crawler)
       - [Run Crawler](#run-crawler)
+    - [7. Query Glue database using AWS Athena](#7-query-glue-database-using-aws-athena)
 
 
 ### 1. Create IAM Role
@@ -150,3 +151,10 @@ Notice that the data is automatically classified and a schema is created with th
 ![](../resources/glue/glue-table-schema.png)
 
 > The crawler can be scheduled to run at specific times. New data uploaded to the S3 bucket will be crawled with each manual/scheduled run.
+
+### 7. Query Glue database using AWS Athena
+
+Choose a table and click on "view data". This will open Athena and allow you to query. 
+
+![](../resources/glue/glue-table-view-data.png)
+![](../resources/glue/glue-athena-query.png)
