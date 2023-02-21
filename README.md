@@ -56,7 +56,7 @@ Move data across storage systems:
 
 ## Practical Guide
 
-1. Create S3 Bucket (TODO)
+1. [Create S3 Bucket](./docs/create-s3-bucket.md)
 2. [Create AWS Redshift Cluster](./docs/create-redshift-cluster.md)   
 3. [Setup AWS Glue](./docs/create-glue.md)
 
