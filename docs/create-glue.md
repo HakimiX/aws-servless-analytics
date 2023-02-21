@@ -9,9 +9,10 @@
     - [4. AWS Glue database](#4-aws-glue-database)
     - [5. AWS Glue Tables](#5-aws-glue-tables)
     - [6. AWS Glue Crawlers](#6-aws-glue-crawlers)
-      - [Catalogin tables with crawlers](#catalogin-tables-with-crawlers)
+      - [Catalogging tables with crawlers](#catalogging-tables-with-crawlers)
       - [Crawler Execution Workflow](#crawler-execution-workflow)
-    - [7. AWS Glue Classifier](#7-aws-glue-classifier)
+      - [Create Crawler](#create-crawler)
+      - [Run Crawler](#run-crawler)
 
 
 ### 1. Create IAM Role
@@ -103,7 +104,7 @@ Crawlers have built-in classifiers and can run ad-hoc or on a schedule (serverle
 ![](../resources/glue/glue-crawlers.png)
 
 
-#### Catalogin tables with crawlers
+#### Catalogging tables with crawlers
 You can use a crawler to populate the AWS Glue Data Catalog with tables. The is the primary method used by most Glue users. 
 
 **You add a crawler within your Data Catalog to traverse your data stores**.
@@ -120,5 +121,32 @@ Crawler runs any custom classifier to infer the schema of the data. (you provide
 
 The first custom classifier to successfully recognize the structure of the data is used to create a schema. If no classifier matches the data schema, built-in classifiers try to recognize the data schema. 
 
-### 7. AWS Glue Classifier
+#### Create Crawler
 
+1. Set crawler properties
+![](../resources/glue/glue-1-set-crawler-properties.png)
+
+2. Set crawler data sources and classifiers. Select the S3 bucket to crawl
+![](../resources/glue/glue-2-set-datasources-and-classifiers.png)
+
+3. Configure security settings. Select the previously created IAM role for Glue. 
+![](../resources/glue/glue-3-configure-security-settings.png)
+
+4. Set output and scheduling. Select the Glue database. 
+![](../resources/glue/glue-4-set-output-and-scheduling.png)
+
+5. Review and create
+![](../resources/glue/glue-5-review-and-create.png)
+
+#### Run Crawler
+
+1. Run the crawler. 
+![](../resources/glue/glue-run-crawler.png)
+
+2. Once the crawler has run successfully (completed), navigate to the Glue tables and see the new tables created by the crawler. 
+![](../resources/glue/glue-post-run.png)
+
+Notice that the data is automatically classified and a schema is created with the correct columns and data types.
+![](../resources/glue/glue-table-schema.png)
+
+> The crawler can be scheduled to run at specific times. With each run, new data that is uploaded to the S3 bucket will be crawled. 
