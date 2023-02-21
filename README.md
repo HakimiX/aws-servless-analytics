@@ -12,7 +12,7 @@ AWS Athena, Glue, Quicksight, and Redshift Spectrum
   - [Technologies](#technologies)
     - [AWS Glue](#aws-glue)
   - [Practical Guide](#practical-guide)
-    - [Sources](#sources)
+  - [Sources](#sources)
 
 ## Ecosystem Overview
 **How does data go from source to reporting?**<br>
@@ -61,7 +61,9 @@ Move data across storage systems:
 3. [Setup AWS Glue](./docs/create-glue.md)
 
 
-### Sources
+## Sources
 
 * [What is AWS Glue?](https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html)
 * [Data Catalog and crawlers in AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html)
+* [Crawler properties](https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html)
+* [Time-based schedules for jobs and crawlers](https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html)

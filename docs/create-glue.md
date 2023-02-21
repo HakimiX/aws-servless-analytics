@@ -149,4 +149,4 @@ The first custom classifier to successfully recognize the structure of the data 
 Notice that the data is automatically classified and a schema is created with the correct columns and data types.
 ![](../resources/glue/glue-table-schema.png)
 
-> The crawler can be scheduled to run at specific times. With each run, new data that is uploaded to the S3 bucket will be crawled. 
+> The crawler can be scheduled to run at specific times. New data uploaded to the S3 bucket will be crawled with each manual/scheduled run.
